@@ -40,8 +40,8 @@ def adiciona_anexo(msg, filename):
     mime.add_header('Content-Disposition', 'attachment', filename=filename)
     msg.attach(mime)
 
-de = 'chamados@palmed.com.br'
-para = ['joeltonsmoura1@gmail.com']
+de = '(emailorgiem)'
+para = ['(emailDestino)']
 
 msg = MIMEMultipart()
 msg['From'] = de
@@ -55,8 +55,8 @@ adiciona_anexo(msg, './config.XML')
 
 raw = msg.as_string()
 
-smtp = smtplib.SMTP('smtp.palmed.com.br', 25)
-smtp.login('chamados@palmed.com.br', 'Eu123456@')
+smtp = smtplib.SMTP('(servidor_smtp)', 25)
+smtp.login('(logim smtp)', '(semha smtp)')
 print('Passou aqui')
 smtp.sendmail(de, para, raw)
 smtp.quit()
